@@ -1,0 +1,42 @@
+<?php
+//--------------------загрузка файла изображения -----------------------------------------------------------------------------------------
+$this->registerJs(
+    '
+  $(function(){
+  $("#getPreview").on("submit", function(e){
+    e.preventDefault();
+    var $that = $(this),
+    formData = new FormData($that.get(0));
+    $.ajax({
+      url: $that.attr("action"),
+      type: $that.attr("method"),
+      contentType: false,
+      processData: false,
+      data: formData,
+      success: function(response){
+             //   alert("OK " + response);
+                document.getElementById("newPreviewTxt").value =  response;
+                document.getElementById("previewIMG").src =  response;
+      //  $("#newPreviewTxt").html(response);
+      }
+    });
+  });
+});
+         '
+);
+?>
+
+document.getPreview.submit();
+onchange="document.getPreview.submit();"
+hghgjh  jhjhj
+
+
+ <form action="../lib/myLib.php" method="post" id="getPreview" name="getPreview" enctype="multipart/form-data">
+                <? if (!($model->preview == '')):?>
+                    <img src="<?= $model->pathToPreview . $model->preview;?>" id="previewIMG" height="400" width="auto" ">
+                <?else:?>
+                    <img src="<?= $model->pathToPreview . $model->tmpImage;?>" id="previewIMG" height="400" width="auto"  >
+                <?endif;?>
+                <input type="file" name="newPreview" id="newPreview" ><br>
+                <input type="submit" id="submit" value="Обновить превью" >
+            </form>
