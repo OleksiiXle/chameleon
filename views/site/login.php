@@ -6,7 +6,7 @@
 <?= $form->field($login_model, 'userName')->textInput(['autofocus' => true]) ?>
 <?= $form->field($login_model, 'userPassword')->passwordInput() ?>
     <div>
-        <button type = 'submit' class = 'btn btn-primary'>Submitik</button>
+        <button type = 'submit' class = 'btn btn-primary'>Войти</button>
 
     </div>
 
