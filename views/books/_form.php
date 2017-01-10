@@ -14,7 +14,7 @@ use yii\widgets\ActiveForm;
             <?= $form->field($model, 'author_id')->dropDownList($model->authorsListSLV) ?>
             <?= $form->field($model, 'date')->textInput(['type' => 'date']) ?>
             <?= Html::submitButton($model->isNewRecord ? 'Создать' : 'Сохранить изменения', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
-            <input id = "newPreviewTxt" name = "newPreviewTxt" value ="">
+            <br><br><input id = "newPreviewTxt" name = "newPreviewTxt" value ="" size="70" disabled>
         </div>
         <?php ActiveForm::end(); ?>
 

@@ -2,7 +2,7 @@
 use yii\helpers\Html;
 
 $this->title = 'Редактировать данные: ' . $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Books', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Книги', 'url' => ['index']];
 $this->params['breadcrumbs'][] = 'Редактировать';
 ?>
 <div class="books-update">
